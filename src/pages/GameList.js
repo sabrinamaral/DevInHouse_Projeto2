@@ -1,34 +1,37 @@
-import { useEffect, useState } from 'react';
-import { Card } from '../components/Card';
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { Card } from '../Components/Card';
+import { StyledHeader, StyledH1 } from "../General Styles/Header.styles";
+import { StyledContainer } from '../General Styles/Container.styles';
+import { gameContext } from '../Context/game.context';
 
 export const GameList = () => {
-
-    const [games, setGames] = useState([]);
-
-    useEffect(() => {
-        const config = {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "mmo-games.p.rapidapi.com",
-                "x-rapidapi-key": "ee423169famsh6cd7d0e43bed79fp17338fjsnb77e77cf846a"
-            }
-        } 
-        fetch("https://mmo-games.p.rapidapi.com/games", config).then(response=>response.json()).then(data=> setGames(data))
-    }, [])
-
+    const { games } = useContext(gameContext);
+    
     return(
         <>
+            <StyledHeader>
+            <NavLink to="/" className="current" exact='true'>
+                <li>Home</li>
+            </NavLink>
+            <NavLink to="/gamenews" className="current" exact='true'>
+                <li>News</li>
+            </NavLink>
+            <StyledH1>Game List</StyledH1>
+            </StyledHeader>
+            <StyledContainer>
             {games.length > 0 ? (
                 games.map(game => (
                     <Card 
+                    id={game.id}
                     key={game.id}
                     thumbnail={game.thumbnail} 
                     title={game.title} 
-                    platform={game.platform} 
-                    description={game.short_description} />
+                    genre={game.genre} />
                 ))
             ) : (<p> Não há card de jogos disponível</p>)}
-            
+            </StyledContainer>
         </>
     )
 }
