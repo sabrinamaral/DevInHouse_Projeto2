@@ -1,40 +1,36 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  width: 100vw;
   height: 7rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   background-color: #000;
   text-align: center;
+  border-bottom: .1rem solid #fff;
+`;
 
+export const StyledDiv = styled.div`
   a {
-    text-decoration: none;
-  }
-
-  li {
+    width: 10rem;
     color: #fff;
-    font-weight: bold;
-    margin: 0 0.8rem;
-    font-size: 1.3rem;
-    position: relative;
-    list-style: none;
-    width: 8rem;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem;
   }
-
-.current {
-  color: #fff;
-  border-bottom: 2px solid black;
-}
-
 `;
 
 export const StyledH1 = styled.h1`
-    width: 100vw;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     text-align: end;
-    padding-right: 2rem;
+    margin-right: 2rem;
+    color: #fff;
+`;
+
+export const StyledSpan = styled.span`
+    font-size: .8rem;
     color: #fff;
 `;
