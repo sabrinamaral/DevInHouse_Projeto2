@@ -1,26 +1,15 @@
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
 
-import { Card } from '../Components/Card';
-import { StyledHeader, StyledH1 } from "../General Styles/Header.styles";
-import { StyledContainer } from '../General Styles/Container.styles';
-import { gameContext } from '../Context/game.context';
+import { Card } from "../components/Card/Card";
+import { StyledContainer } from '../general styles/container.styles';
+import { gameContext } from '../context/game.context';
 
 export const GameList = () => {
-    const { games } = useContext(gameContext);
-    
+    const { state } = useContext(gameContext);
+    const { games } = state;
     return(
         <>
-            <StyledHeader>
-            <NavLink to="/" className="current" exact='true'>
-                <li>Home</li>
-            </NavLink>
-            <NavLink to="/gamenews" className="current" exact='true'>
-                <li>News</li>
-            </NavLink>
-            <StyledH1>Game List</StyledH1>
-            </StyledHeader>
-            <StyledContainer>
+           <StyledContainer>
             {games.length > 0 ? (
                 games.map(game => (
                     <Card 
@@ -32,6 +21,7 @@ export const GameList = () => {
                 ))
             ) : (<p> Não há card de jogos disponível</p>)}
             </StyledContainer>
+            
         </>
     )
 }
