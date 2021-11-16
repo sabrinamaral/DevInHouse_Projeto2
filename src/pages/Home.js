@@ -1,25 +1,31 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
-import { StyledHeader, StyledH1 } from "../General Styles/Header.styles";
-import { StyledContainer } from "../General Styles/Container.styles";
+import { StyledDiv, StyledBtn, StyledH1 } from "./home.styles";
+import BackgroundImage from "../assets/background.jpg"
+import { useNavigate } from "react-router";
 
 export const Home = () => {
+    const navigate = useNavigate();
     return(
-        <>
-            <StyledHeader>
-            <NavLink to="/gamelist" className="current" exact='true'>
-                <li>Game List</li>
-            </NavLink>
-            <NavLink to="/gamenews" className="current" exact='true'>
-                <li>News</li>
-            </NavLink>
-            <StyledH1>HOME</StyledH1>
-            </StyledHeader>
-            <StyledContainer>
+            <div style={{
+                    width: '100%',
+                    height: '100vh',
+                    background: `url(${BackgroundImage})`,
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                    display: "flex",
+                    position: "fixed",
+                    flexDirection:"column",
+                    justifyContent: 'center',
+                    alignItems: 'center',                    
+                }}>
+                    <StyledDiv>
+                        <StyledH1>Bem Vindo ao DEVinMMO</StyledH1>
+                        <StyledBtn onClick={()=>(navigate('/gamelist'))}>Game List</StyledBtn>
+                        <StyledBtn onClick={()=>(navigate('/gamenews'))}>News</StyledBtn>
+                    </StyledDiv>
 
-           </StyledContainer>
-            
-        </>
+            </div>         
     )
 }
