@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
 export const StyledContainerNews = styled.div`
-    flex-direction: column;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 35rem;
     padding: 1rem;
     background-color: rgba(233, 236, 239, 0.5);
+    text-align: center;
 `;
 
 export const StyledImg = styled.img`
-    max-width: 70vh;
+    max-width: 30rem;
 `;
 
 export const StyledH2 = styled.h2`
