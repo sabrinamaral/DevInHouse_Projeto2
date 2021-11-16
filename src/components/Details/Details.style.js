@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const StyledDetails = styled.div`
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    padding: 1rem;
+    width: 40rem;
+    padding: .8rem;
+    
     background-color: rgba(233, 236, 239, 0.5);
 `;
 
@@ -35,4 +36,5 @@ export const StyledSpan = styled.span`
     padding: .4rem;
     border-radius: .5rem;
     margin-top: .4rem;
+    margin-bottom: 2rem;
 `;
