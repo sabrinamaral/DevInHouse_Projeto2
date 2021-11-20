@@ -7,8 +7,10 @@ export const SectionNews = ({description, image, title, id, url}) => {
         <>
             <StyledContainerNews>
                 <StyledImg src={image} alt={title} key={id} onClick={()=> window.open(url, "_blank")}/>
-                <StyledH2>{title}</StyledH2>
-                <StyledP>{description}</StyledP>
+                <div>
+                    <StyledH2>{title}</StyledH2>
+                    <StyledP>{description}</StyledP>
+                </div>
             </StyledContainerNews>
         </>
     )

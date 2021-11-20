@@ -7,8 +7,8 @@ export const StyledContainer = styled.main`
 `;
 
 export const StyledDiv = styled.div`
-    margin: .5rem;
-    margin-left: 5rem;
+    margin-left: 4.5rem;
+    margin-top: 1rem;
     height: 2rem;
     width: auto;
     font-size: 1rem;

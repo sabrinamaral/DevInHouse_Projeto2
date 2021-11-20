@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { gameContext } from "../../context/game.context";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+
+import { gameContext } from "../../context/game.context";
 import { StyledCarouselImg, StyledCarouselP } from "./Carousel.style";
 
 export const SimpleSlider =() => {
@@ -27,7 +27,5 @@ export const SimpleSlider =() => {
           ))}
         </Slider>
       </>
-   
-
     );
   }

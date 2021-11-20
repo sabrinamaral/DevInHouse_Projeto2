@@ -6,6 +6,8 @@ export const StyledInput = styled.input`
     border: 0.07rem solid #ccc;
     border-radius: 0.7rem;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
 
     ::placeholder{
         font-size: 1.2rem;
