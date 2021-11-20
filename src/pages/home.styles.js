@@ -1,26 +1,21 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-    height: 18rem;
-    width: 30rem;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 2rem;  
+    background-color: rgba(255, 255, 255, 0.15);
 `;
 
 export const StyledBtn = styled.button`
-    width: 20rem;
+    width: 15rem;
     height: 3rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 1rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     background-color: rgba(255, 255, 255, 0.7);
     `;
-
-export const StyledH1 = styled.h1`
-`;
