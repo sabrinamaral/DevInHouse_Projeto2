@@ -1,13 +1,13 @@
-import { StyledDetails, StyledH2, StyledH4, StyledH6, StyledP, StyledSpan } from "./Details.style";
+import { StyledH2, StyledH4, StyledH6, StyledP, StyledP2, StyledImg, StyledSpan } from "./Details.style";
 
-export const GameContainerDetails = ({ thumbnail, title, genre, storage, memory, os, processor, description, developer}) => {
+export const ComponentGameDetails = ({ thumbnail, title, genre, storage, memory, os, processor, description, developer}) => {
     
     return(
-        <StyledDetails>
-            <img src={thumbnail} alt={title}></img>
+        <>
+            <StyledImg src={thumbnail} alt={title}/>
             <StyledH2>{title}</StyledH2>
             <StyledH4>Gênero - {genre}</StyledH4>
-            <p>{description}</p>
+            <StyledP2>{description}</StyledP2>
             <StyledH4>Desenvolvedor | {developer}</StyledH4>
             <StyledSpan>
                 <StyledH6>Requisitos mínimos de sistema</StyledH6>
@@ -16,7 +16,7 @@ export const GameContainerDetails = ({ thumbnail, title, genre, storage, memory,
                 <StyledP>Sistema Operacional - {os}</StyledP>
                 <StyledP>Processador - {processor}</StyledP>
             </StyledSpan>  
-        </StyledDetails>
+        </>
     )
 }
 
