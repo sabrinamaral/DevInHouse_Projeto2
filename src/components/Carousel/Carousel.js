@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { StyledCarouselImg, StyledCarouselH3 } from "./Carousel.style";
+import { StyledCarouselImg, StyledCarouselP } from "./Carousel.style";
 
 export const SimpleSlider =() => {
   const { state } = useContext(gameContext);
@@ -19,13 +19,15 @@ export const SimpleSlider =() => {
     };
 
     return (
-      <div>
-        <StyledCarouselH3>mais imagens...</StyledCarouselH3>
+      <>
+        <StyledCarouselP>mais imagens...</StyledCarouselP>
         <Slider {...settings}>
          {game && game.screenshots.map((screenshot) => (
-            <StyledCarouselImg src={screenshot.image} alt={game&&game.title} key={game&&game.id}/>
+            <StyledCarouselImg src={screenshot.image} alt={game.title} key={game.id}/>
           ))}
         </Slider>
-      </div>
+      </>
+   
+
     );
   }

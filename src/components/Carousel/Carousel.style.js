@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledCarouselImg = styled.img`
-    display: flex;
-    flex-direction: column;
     max-width: 500px;
 `;
 
-export const StyledCarouselH3 = styled.h3`
+export const StyledCarouselP = styled.p`
+    font-size: 1.6rem;
+    font-weight: 600;
     padding-left: 0.7rem;
 `;
