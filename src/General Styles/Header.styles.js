@@ -9,13 +9,14 @@ export const StyledHeader = styled.header`
   top: 0;
   background-color: #000;
   text-align: center;
-  border-bottom: .1rem solid #fff;
+  border-bottom: .1rem solid #CAE5FF;;
+  z-index: 10;
 `;
 
 export const StyledDiv = styled.div`
   a {
     width: 10rem;
-    color: #fff;
+    color: #CAE5FF;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 600;
@@ -27,10 +28,10 @@ export const StyledH1 = styled.h1`
     font-size: 2.2rem;
     text-align: end;
     margin-right: 2rem;
-    color: #fff;
+    color: #CAE5FF;
 `;
 
 export const StyledSpan = styled.span`
     font-size: .8rem;
-    color: #fff;
+    color: #CAE5FF;
 `;
