@@ -2,8 +2,7 @@ import { useContext } from "react";
 
 import { SectionNews } from "../components/News/News";
 import { gameContext } from "../context/game.context";
-import { StyledContainer } from "../general styles/container.styles";
-
+import { StyledContainer } from "./gameNews.styles";
 
 export const GameNews = () => {
     const { state } = useContext(gameContext);
