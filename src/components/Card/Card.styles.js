@@ -13,7 +13,6 @@ export const StyledCard = styled.div`
 export const StyledImg = styled.img`
     border-top-right-radius: .5rem;
     border-top-left-radius: .5rem;
-    cursor: pointer;    
 
 `;
 
@@ -27,9 +26,9 @@ export const StyledP = styled.p`
 `;
 
 export const StyledButton = styled.button`
-    width: 6rem;
     background-color: #343a40;
     color: #fff;
+    width: 6rem;
     padding: .5rem;
     margin: .6rem;
     align-self: center;
