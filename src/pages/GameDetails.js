@@ -1,15 +1,13 @@
-import { useContext, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router';
+import { useContext, useEffect } from "react";
+import { useParams } from "react-router";
 
-import { StyledContainer } from '../general styles/container.styles';
-import { GameContainerDetails } from '../components/Details/Details';
-import { gameContext } from '../context/game.context';
+import { ComponentGameDetails } from "../components/Details/Details";
+import { gameContext } from "../context/game.context";
 import { SimpleSlider } from "../components/Carousel/Carousel";
 import { StyledDetails } from "../components/Details/Details.style";
-import { FormComment } from "../components/Form/Form"
+import { CommentForm } from "../components/Form/Form"
 
 export const GameDetails = () => {
-    const navigate = useNavigate();
     const { gameId } = useParams();
   
     const { state, fetchGameId, clearGame } = useContext(gameContext);
@@ -29,24 +27,26 @@ export const GameDetails = () => {
     }, []);
 
         return(
-        <>
-            <StyledContainer>
-                <StyledDetails>
-                    <GameContainerDetails
-                        title={game && game.title}
-                        thumbnail={game && game.thumbnail} alt={game && game.title} onClick={()=>navigate('/gamelist')}
-                        developer={game && game.developer}
-                        memory={game && game.minimum_system_requirements.memory}
-                        storage={game && game.minimum_system_requirements.storage}
-                        os={game && game.minimum_system_requirements.os}
-                        processor={game && game.minimum_system_requirements.processor}
-                        description={game && game.short_description}
-                        genre={game && game.genre}
-                    />
-                    <SimpleSlider />
-                </StyledDetails>
-                <FormComment />
-            </StyledContainer>
-        </>
+          <StyledDetails>
+              {!game ? (
+              <p> Não há detalhes para esse jogo disponível.</p>
+              ) : (
+              <ComponentGameDetails
+                title={game.title}
+                thumbnail={game.thumbnail} alt={game.title}
+                developer={game.developer}
+                memory={game.minimum_system_requirements ? game.minimum_system_requirements.memory : "não especificado"}
+                storage={game.minimum_system_requirements ? game.minimum_system_requirements.storage : "não especificado"}
+                os={game.minimum_system_requirements ? game.minimum_system_requirements.os : "não especificado"}
+                processor={game.minimum_system_requirements ? game.minimum_system_requirements.processor : "não especificado"}
+                description={game.description ? game.description.replace(/(<([^>]+)>)/gi, "") : "sem dados"}
+                genre={game.genre ? game.genre : "não especificado"}
+              />
+            )}        
+                <SimpleSlider />
+
+                <CommentForm id={gameId}/>
+
+          </StyledDetails>
     ) 
 }
