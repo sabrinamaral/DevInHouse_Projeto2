@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router';
+import React from "react";
+import { useNavigate } from "react-router";
 
 import { StyledCard, StyledImg, StyledH2, StyledP, StyledButton } from "./Card.styles"
 
