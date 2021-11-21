@@ -10,7 +10,6 @@ export const CommentForm = ( {id} ) => {
       email: '',
       message: ''
     },
-
     validationSchema: Yup.object({
       name: Yup.string().required("Digite seu nome"),
       email: Yup.string().email("Email inválido!").required("Digite seu email."),
@@ -38,7 +37,7 @@ export const CommentForm = ( {id} ) => {
         value={formik.values.name}
         />
         {formik.touched.name && formik.errors.name ? (
-         <div>{formik.errors.name}</div>
+         <div style={{color:"red"}}>{formik.errors.name}</div>
        ) : null}
         
       <label htmlFor="email">Email Address</label>
@@ -51,7 +50,7 @@ export const CommentForm = ( {id} ) => {
         value={formik.values.email}
       />
        {formik.touched.email && formik.errors.email ? (
-         <div>{formik.errors.email}</div>
+         <div style={{color:"red"}}>{formik.errors.email}</div>
        ) : null}
 
       <label htmlFor="textarea">Deixe seu comentário</label>
@@ -64,7 +63,7 @@ export const CommentForm = ( {id} ) => {
         value={formik.values.message}
       />
       {formik.touched.message && formik.errors.message ? (
-         <div>{formik.errors.message}</div>
+         <div style={{color:"red"}}>{formik.errors.message}</div>
        ) : null}
 
       <button type="submit" >Submit</button>
