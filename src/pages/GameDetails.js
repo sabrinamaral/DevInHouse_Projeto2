@@ -7,7 +7,7 @@ import { SimpleSlider } from "../components/Carousel/Carousel";
 import { StyledDetails } from "../components/Details/Details.style";
 import { CommentForm } from "../components/Form/Form"
 
-export const GameDetails = () => {
+export const GameDetails = ({comment}) => {
     const { gameId } = useParams();
   
     const { state, fetchGameId, clearGame } = useContext(gameContext);
@@ -44,9 +44,7 @@ export const GameDetails = () => {
               />
             )}        
                 <SimpleSlider />
-
-                <CommentForm id={gameId}/>
-
+                <CommentForm id={gameId} comment={comment}/>
           </StyledDetails>
     ) 
 }
