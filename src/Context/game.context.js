@@ -75,7 +75,7 @@ const [state, dispatch] = useReducer(reducer, initial_state);
         dispatch({ type: "SET_GAME", content: null });
       };
 
-    //___________________LOGIC FOR SEARCH BARS_______________________//
+    //___________________SEARCH BARS LOGIC_______________________//
     
     const { games, news, searchTerm } = state;
 
@@ -85,8 +85,7 @@ const [state, dispatch] = useReducer(reducer, initial_state);
 
     useEffect(() => {
         const gameResults = games.filter(game =>
-        game.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        game.title.toLowerCase().includes(searchTerm.toLowerCase()));
         dispatch({type: "SET_SEARCH_GAMERESULTS", content: gameResults});
     // eslint-disable-next-line
     }, [searchTerm]);
