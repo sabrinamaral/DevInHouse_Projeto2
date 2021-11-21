@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Card } from "../components/Card/Card";
 import { gameContext } from "../context/game.context";
 import { Search } from "../components/Search/Search";
-import { StyledContainer, StyledDiv } from "./gameList.styles";
+import { StyledContainer, StyledDiv, StyledSpan } from "./gameList.styles";
 
 export const GameList = () => {
     const { state, handleChange } = useContext(gameContext);
@@ -14,7 +14,9 @@ export const GameList = () => {
 
     return(
         <>  
-            <StyledDiv> Número de jogos: {searchLength}</StyledDiv>
+
+            <StyledDiv>Número de jogos: {searchLength}</StyledDiv>
+            <StyledSpan>Pressione esc para limpar.</StyledSpan>
             <StyledContainer>
             <Search 
                 type="search"
@@ -22,6 +24,7 @@ export const GameList = () => {
                 value={searchTerm}
                 onChange={handleChange}
             />
+            
                 {games.length > 0 ? (
                     gameFiltered.map(game => (
                         <Card 

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { SectionNews } from "../components/News/News";
 import { Search } from "../components/Search/Search";
 import { gameContext } from "../context/game.context";
-import { StyledContainer, StyledSpan } from "./gameNews.styles";
+import { StyledContainer, StyledSpan, StyledSpan2 } from "./gameNews.styles";
 
 export const GameNews = () => {
     const { state, handleChange } = useContext(gameContext);
@@ -16,6 +16,7 @@ export const GameNews = () => {
         <>  
             <StyledContainer>
             <StyledSpan> Notícias: {searchLength}</StyledSpan>
+            <StyledSpan2>Pressione esc para limpar.</StyledSpan2>
             <Search 
                 type="search"
                 placeholder={"Busque pelo título da notícia."}
