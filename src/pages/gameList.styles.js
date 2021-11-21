@@ -7,10 +7,18 @@ export const StyledContainer = styled.main`
 `;
 
 export const StyledDiv = styled.div`
+    align-self: flex-start;
+    margin-left: 4.5rem;
+    margin-top: 1rem;
+    height: 2rem;
+    text-transform: uppercase;
+`;
+
+export const StyledSpan = styled.span`
+    justify-self: center;
     margin-left: 4.5rem;
     margin-top: 1rem;
     height: 2rem;
     width: auto;
-    font-size: 1rem;
-    text-transform: uppercase;
+    font-size: .8rem;
 `;

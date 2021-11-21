@@ -13,3 +13,9 @@ export const StyledSpan = styled.span`
     height: 2rem;
     text-transform: uppercase;
 `;
+
+export const StyledSpan2 = styled.span`
+    align-self: flex-start;
+    margin-left: 4.5rem;
+    font-size: .8rem;
+`;
